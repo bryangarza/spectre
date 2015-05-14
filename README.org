@@ -1,0 +1,7 @@
+#+title: Spectre
+
+This program takes an image (in most common file formats), and uses the Inverse
+Fast Fourier Transform equation to convert it to a waveform, which is then
+written to an audio file (wav). This file can be compressed as mp3 if desired.
+
+[[./house-waveform.jpg]]
