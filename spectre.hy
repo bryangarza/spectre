@@ -24,9 +24,9 @@
 (defn transform [im]
   (let [[width (get im.size 0)]
         [height (get im.size 1)]]
-    (for [i (range height)]
+    (for [i (range width)]
       (setv line [])
-      (for [j (range width)]
+      (for [j (range height)]
         (.insert line 0 (pix im i j)))
 
       (setv result (ifft (+ line pad)))
