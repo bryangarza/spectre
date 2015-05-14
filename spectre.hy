@@ -27,7 +27,7 @@
     (for [i (range height)]
       (setv line [])
       (for [j (range width)]
-        (.append line (pix im j i)))
+        (.insert line 0 (pix im i j)))
 
       (setv result (ifft (+ line pad)))
       (.append results result))))
