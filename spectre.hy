@@ -52,8 +52,7 @@
   (setv buf (str ""))
   (for [i line]
     (setv val i.real)
-    (setv buf (str (+ buf (.pack struct "h" (int (* val (/ bigint largest-amp)))))))
-    )
+    (setv buf (str (+ buf (.pack struct "h" (int (* val (/ bigint largest-amp))))))))
   (.writeframes w buf)
   (setv written (+ written (/ (len buf) 2))))
 
