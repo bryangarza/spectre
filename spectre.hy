@@ -38,17 +38,13 @@
 
 (setv w (.open wave (+ filename ".wav") "w"))
 (.setparams w (, 1 2 sampling-frequency sample-len "NONE" ""))
-(setv largest-amp 0.0)
-(setv smallest-amp 0.0)
 
 (setv largest-amp (->> results (flatten) (map (fn [x] (abs x.real))) (max)))
-
 (print "max amp: " largest-amp)
 
 (setv bigint (** 2 14))
 (setv written 0)
 (for [line results]
-  (print "written " written " of " sample-len)
   (setv buf (str ""))
   (for [i line]
     (setv val i.real)
