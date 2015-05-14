@@ -41,12 +41,7 @@
 (setv largest-amp 0.0)
 (setv smallest-amp 0.0)
 
-;; (setv largest-amp (max (map (fn [x] (abs x.real)) (flatten results))))
-(for [line results]
-  (for [i line]
-    (setv n (abs i.real))
-    (if (> n largest-amp)
-      (setv largest-amp n))))
+(setv largest-amp (->> results (flatten) (map (fn [x] (abs x.real))) (max)))
 
 (print "max amp: " largest-amp)
 
