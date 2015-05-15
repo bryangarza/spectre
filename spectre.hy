@@ -28,7 +28,6 @@
       (setv line [])
       (for [j (range height)]
         (.insert line 0 (pix im i j)))
-
       (setv result (ifft (+ line pad)))
       (.append results result))))
 
@@ -43,13 +42,11 @@
 (print "max amp: " largest-amp)
 
 (setv bigint (** 2 14))
-(setv written 0)
 (for [line results]
   (setv buf (str ""))
   (for [i line]
     (setv val i.real)
     (setv buf (str (+ buf (.pack struct "h" (int (* val (/ bigint largest-amp))))))))
-  (.writeframes w buf)
-  (setv written (+ written (/ (len buf) 2))))
+  (.writeframes w buf))
 
 (.close w)
