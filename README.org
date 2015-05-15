@@ -2,6 +2,16 @@
 
 This program takes an image (in most common file formats), and uses the Inverse
 Fast Fourier Transform equation to convert it to a waveform, which is then
-written to an audio file (wav). This file can be compressed as mp3 if desired.
+written to an audio file (wav). This file can be (later) compressed as mp3 if
+desired.
+
+The Fourier Transform allows us to take a measure of Time and /transform/ to a
+measure of Frequency and Amplitude.
+
+Use [[http://www.sonicvisualiser.org/][Sonic Visualiser]] to look at the waveform and spectrogram of the generated
+file.
+
+Possible improvements: using Numpy's `ifft2`, the 2-dimensional variant of IFFT,
+to process the entire image at once. Converting for-loops to `map` functions.
 
 [[./house-waveform.png]]
